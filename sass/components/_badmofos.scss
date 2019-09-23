@@ -1,6 +1,7 @@
 body {
 	@include container();
 	padding: 3em 0 0;
+	overflow-x: hidden;
 }
 
 header {
@@ -17,14 +18,40 @@ footer {
 	a {
 		font-weight: 400;
 	}
-	
-	p {
-		margin: 0;
-	}
 }
 
 #mofos {
 	@include reset-list();
+
+	figure {
+		width: 50%;
+		position: absolute;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 250ms ease-out;
+		z-index: -1;
+
+		img {
+			display: block;
+			position: relative;
+			z-index: 2;
+			width: 100%;
+			height: auto;
+			mix-blend-mode: multiply;
+			filter: grayscale(70%);
+			opacity: 0.45;
+		}
+
+		.fig-bg {
+			background: $bg-color;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 1;
+		}
+	}
 
 	li {
 		border-bottom: 1px solid white;
@@ -33,7 +60,15 @@ footer {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+
+		&:hover {
+			figure {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
 	}
+
 
 	.name {
 		width: 60%;
