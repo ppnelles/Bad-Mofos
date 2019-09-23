@@ -2,9 +2,15 @@ a {
 	background-color: transparent;
 	color: $link-color;
 	text-decoration: underline;
+	font-weight: 900;
+	background-color: transparent;
+	transition: all 250ms ease-in-out; 
+	padding: 0 2px;
 
 	&:hover {
-		color: darken($link-color, 20%);
+		color: $bg-color;
+		background-color: $link-color;
+		text-decoration: none;
 	}
 
 	&:active,

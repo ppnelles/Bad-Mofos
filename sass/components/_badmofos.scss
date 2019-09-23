@@ -1,0 +1,45 @@
+body {
+	@include container();
+	padding: 3em 0 0;
+}
+
+header {
+	text-align: center;
+	margin: 0 0 6em;
+}
+
+footer {
+	margin: 6em 0 0;
+	padding: 1em 0;
+	text-align: center;
+	font-size: 80%;
+
+	a {
+		font-weight: 400;
+	}
+	
+	p {
+		margin: 0;
+	}
+}
+
+#mofos {
+	@include reset-list();
+
+	li {
+		border-bottom: 1px solid white;
+		border-top: 1px solid white;
+		padding: 2em 1em;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.name {
+		width: 60%;
+	}
+
+	.movie {
+		text-align: right;
+	}
+}
